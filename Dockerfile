@@ -9,7 +9,6 @@ COPY package*.json yarn.lock ./
 
 # Install app dependencies
 RUN yarn install --ignore-engines
-# RUN npm rebuild uws
 
 # Bundle app source
 COPY . .
