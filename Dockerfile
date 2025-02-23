@@ -7,8 +7,11 @@ WORKDIR /usr/src/app
 # Copy over package.json (and package-lock.json, if applicable)
 COPY package*.json yarn.lock ./
 
+COPY config/config.example.js config/config.js
+
 # Install app dependencies
-RUN yarn install
+RUN yarn install --ignore-engines
+# RUN npm rebuild uws
 
 # Bundle app source
 COPY . .

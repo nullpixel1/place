@@ -13,7 +13,7 @@ services:
       PORT: 3000
       ONLY_LISTEN_LOCAL: "false"
   db:
-    image: mongo
+    image: mongo:3.4
     restart: always
     volumes:
       - mongo-volume:/data/db
